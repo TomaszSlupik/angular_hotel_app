@@ -1,1 +1,38 @@
-<p>reservation-form works!</p>
+<h1>Dodaj rezerwację</h1>
+<form [formGroup]="reservationForm" (ngSubmit)="onSubmit()">
+
+    <div>
+        <label>Wybierz datę zameldowania</label>
+        <input type="date"
+        formControlName="checkInDate"
+        >
+    </div>
+
+    <div>
+        <label>Wybierz datę wymeldowania</label>
+        <input type="date"
+        formControlName="checkOutDate"
+        >
+    </div>
+
+    <div>
+        <label>Podaj imię i nazwisko</label>
+        <input type="text"
+        >
+    </div>
+
+    <div>
+        <label>Podaj email</label>
+        <input type="text"
+        >
+    </div>
+
+    
+    <div>
+        <label>Podaj numer pokoju</label>
+        <input type="number"
+        >
+    </div>
+        
+    <button type="submit" [disabled]="reservationForm.invalid">Zarezerwuj</button>
+</form>
