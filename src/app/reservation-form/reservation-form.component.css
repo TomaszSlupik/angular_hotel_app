@@ -1,3 +1,15 @@
 .error {
-    color: red;
-}
+    font-size: 0.875rem;
+    color: #e74a3b;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    color: #343a40;
+  }
+  
+  form {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  

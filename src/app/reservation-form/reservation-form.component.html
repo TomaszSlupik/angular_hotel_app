@@ -1,53 +1,47 @@
-<h1>Dodaj rezerwację</h1>
-<form [formGroup]="reservationForm" (ngSubmit)="onSubmit()">
+<h1 class="text-center my-4">Dodaj rezerwację</h1>
+<form [formGroup]="reservationForm" (ngSubmit)="onSubmit()" class="container">
 
-    <div>
-        <label>Wybierz datę zameldowania</label>
-        <input type="date"
-        formControlName="checkInDate"
-        >
-        <div *ngIf="reservationForm.get('checkInDate')?.invalid && (reservationForm.get('checkInDate')?.touched || reservationForm.get('checkInDate')?.dirty)">
-            <small class="error">Musisz podać datę zameldowania.</small>
-        </div>
+  <div class="mb-3">
+    <label for="checkInDate" class="form-label">Wybierz datę zameldowania</label>
+    <input id="checkInDate" type="date" formControlName="checkInDate" class="form-control">
+    <div *ngIf="reservationForm.get('checkInDate')?.invalid && (reservationForm.get('checkInDate')?.touched || reservationForm.get('checkInDate')?.dirty)" class="text-danger">
+      <small>Musisz podać datę zameldowania.</small>
     </div>
+  </div>
 
-    <div>
-        <label>Wybierz datę wymeldowania</label>
-        <input type="date"
-        formControlName="checkOutDate"
-        >
+  <div class="mb-3">
+    <label for="checkOutDate" class="form-label">Wybierz datę wymeldowania</label>
+    <input id="checkOutDate" type="date" formControlName="checkOutDate" class="form-control">
+    <div *ngIf="reservationForm.get('checkOutDate')?.invalid && (reservationForm.get('checkOutDate')?.touched || reservationForm.get('checkOutDate')?.dirty)" class="text-danger">
+      <small>Musisz podać datę wymeldowania.</small>
     </div>
+  </div>
 
-    <div>
-        <label>Podaj imię i nazwisko</label>
-        <input 
-        formControlName="name"
-        type="text"
-
-        >
-        <div *ngIf="reservationForm.get('name')?.invalid && (reservationForm.get('name')?.touched || reservationForm.get('name')?.dirty)">
-            <small class="error">Musisz podać swoje imię i nazwisko</small>
-        </div>
+  <div class="mb-3">
+    <label for="name" class="form-label">Podaj imię i nazwisko</label>
+    <input id="name" type="text" formControlName="name" class="form-control">
+    <div *ngIf="reservationForm.get('name')?.invalid && (reservationForm.get('name')?.touched || reservationForm.get('name')?.dirty)" class="text-danger">
+      <small>Musisz podać swoje imię i nazwisko</small>
     </div>
+  </div>
 
-    <div>
-        <label>Podaj email</label>
-        <input 
-        formControlName="email"
-        type="text"
-        >
+  <div class="mb-3">
+    <label for="email" class="form-label">Podaj email</label>
+    <input id="email" type="text" formControlName="email" class="form-control">
+    <div *ngIf="reservationForm.get('email')?.invalid && (reservationForm.get('email')?.touched || reservationForm.get('email')?.dirty)" class="text-danger">
+      <small>Musisz podać swój e-mail</small>
     </div>
+  </div>
 
-    
-    <div>
-        <label>Podaj numer pokoju</label>
-        <input 
-        formControlName="room"
-        type="number"
-        >
+  <div class="mb-3">
+    <label for="room" class="form-label">Podaj numer pokoju</label>
+    <input id="room" type="number" formControlName="room" class="form-control">
+    <div *ngIf="reservationForm.get('room')?.invalid && (reservationForm.get('room')?.touched || reservationForm.get('room')?.dirty)" class="text-danger">
+      <small>Musisz wybrać numer pokoju</small>
     </div>
-        
-    <button type="submit" 
-    >
-    Zarezerwuj</button>
+  </div>
+
+  <div class="d-flex justify-content-center">
+    <button type="submit" class="btn btn-primary">Zarezerwuj</button>
+  </div>
 </form>
