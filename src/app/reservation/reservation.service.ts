@@ -24,4 +24,11 @@ export class ReservationService {
     let index = this.reservations.findIndex( res => res.id === id)
     this.reservations.splice(index, 1)
   }
+
+  updateReservation (id: string, updateReservation: Partial<Reservation>): void {
+    let index = this.reservations.findIndex(res => res.id === id)
+    if (index !== -1) {
+      this.reservations[index] = {...this.reservations[index], ...updateReservation}
+    }
+  }
 }
